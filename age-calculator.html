@@ -2,18 +2,71 @@
 <html>
 <head>
   <title>Age Calculator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 28px;
+    }
+
+    .container {
+      padding: 40px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      display: block;
+      margin-top: 20px;
+      color: #4CAF50;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Age Calculator</h1>
+<div class="header">Age Calculator</div>
 
-<p>This free age calculator helps you find your exact age.</p>
+<div class="container">
+
+<p>Enter your date of birth:</p>
 
 <input type="date" id="dob">
+<br>
 <button onclick="calcAge()">Calculate</button>
 
-<p id="result"></p>
+<p id="result" class="result"></p>
+
+<a href="index.html">⬅ Back to Home</a>
+
+</div>
 
 <script>
 function calcAge() {
