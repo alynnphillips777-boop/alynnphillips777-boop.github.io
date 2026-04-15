@@ -53,21 +53,16 @@ button {
 
 <script>
 function calcLoan(){
+alert("Button works");
 
-let amount = parseFloat(document.getElementById("amount").value);
-let rate = parseFloat(document.getElementById("rate").value) / 100 / 12;
-let months = parseFloat(document.getElementById("years").value) * 12;
-
-if (!amount || !rate || !months) {
-  document.getElementById("result").innerText = "Please fill in all fields correctly.";
-  return;
-}
-
-let payment = (amount * rate) / (1 - Math.pow(1 + rate, -months));
+let amount = document.getElementById("amount").value;
+let rate = document.getElementById("rate").value;
+let years = document.getElementById("years").value;
 
 document.getElementById("result").innerText =
-"Monthly Payment: $" + payment.toFixed(2);
+"Values: " + amount + ", " + rate + ", " + years;
 }
+</script>
 </script>
 
 </body>
