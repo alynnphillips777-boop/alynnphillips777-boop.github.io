@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Paycheck Calculator</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  
+  
+  <h1>Paycheck Calculator</h1>
+
+<input id="hours" placeholder="Hours Worked">
+<input id="rate" placeholder="Hourly Rate">
+
+<br><br>
+<button onclick="calcPay()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcPay(){
+let h = document.getElementById("hours").value;
+let r = document.getElementById("rate").value;
+
+document.getElementById("result").innerText = "Pay: $" + (h*r);
+}
+</script>
+
+</body>
+</html>
