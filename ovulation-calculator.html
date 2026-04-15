@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ovulation Calculator</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  
+  
+  <h1>Ovulation Calculator</h1>
+
+<input type="date" id="date">
+
+<br><br>
+<button onclick="calcOvu()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcOvu(){
+let d = new Date(document.getElementById("date").value);
+d.setDate(d.getDate() + 14);
+
+document.getElementById("result").innerText =
+"Ovulation Date: " + d.toDateString();
+}
+</script>
+
+</body>
+</html>
