@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tip Calculator</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  <h1>Tip Calculator</h1>
+
+<input id="bill" placeholder="Bill Amount">
+<input id="tip" placeholder="Tip %">
+
+<br><br>
+<button onclick="calcTip()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcTip(){
+let b = document.getElementById("bill").value;
+let t = document.getElementById("tip").value;
+
+let total = b * (1 + t/100);
+
+document.getElementById("result").innerText = "Total: $" + total;
+}
+</script>
+
+</body>
+</html>
