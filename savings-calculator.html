@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>Savings Calculator</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  
+  
+  <h1>Savings Calculator</h1>
+
+<input id="amount" placeholder="Amount">
+<input id="rate" placeholder="Interest %">
+
+<br><br>
+<button onclick="calcSave()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcSave(){
+let a = document.getElementById("amount").value;
+let r = document.getElementById("rate").value;
+
+let total = a * (1 + r/100);
+
+document.getElementById("result").innerText =
+"After 1 year: $" + total;
+}
+</script>
+
+</body>
+</html>
