@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head><title>Credit Card Calculator</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  
+  
+  <h1>Credit Card Calculator</h1>
+
+<input id="balance" placeholder="Balance">
+<input id="rate" placeholder="Interest %">
+
+<br><br>
+<button onclick="calcCC()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcCC(){
+let b = document.getElementById("balance").value;
+let r = document.getElementById("rate").value;
+
+let interest = b * (r/100);
+
+document.getElementById("result").innerText = "Monthly Interest: $" + interest;
+}
+</script>
+
+</body>
+</html>
