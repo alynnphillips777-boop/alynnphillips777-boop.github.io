@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calorie Calculator</title>
+</head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  <h1>Calorie Calculator</h1>
+
+<input id="weight" placeholder="Weight (lbs)">
+<input id="height" placeholder="Height (in)">
+<input id="age" placeholder="Age">
+
+<br><br>
+<button onclick="calcCalories()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcCalories(){
+let w = document.getElementById("weight").value;
+let h = document.getElementById("height").value;
+let a = document.getElementById("age").value;
+
+let calories = (10*w + 6.25*h - 5*a + 5);
+
+document.getElementById("result").innerText = "Estimated Calories: " + calories;
+}
+</script>
+
+</body>
+</html>
