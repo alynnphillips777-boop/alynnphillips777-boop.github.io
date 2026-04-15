@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Unit Converter</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  <h1>Inches to Feet</h1>
+
+<input id="inches" placeholder="Inches">
+
+<br><br>
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function convert(){
+let i = document.getElementById("inches").value;
+document.getElementById("result").innerText = (i/12) + " feet";
+}
+</script>
+
+</body>
+</html>
