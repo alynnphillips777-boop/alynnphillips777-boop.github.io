@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head><title>Water Intake</title></head>
+
+<body style="text-align:center; font-family:Arial;">
+
+
+  
+  <h1>Water Intake Calculator</h1>
+
+<input id="weight" placeholder="Weight (lbs)">
+
+<br><br>
+<button onclick="calcWater()">Calculate</button>
+
+<p id="result"></p>
+
+<a href="index.html">⬅ Back</a>
+
+<script>
+function calcWater(){
+let w = document.getElementById("weight").value;
+document.getElementById("result").innerText = "Drink " + (w*0.5) + " oz daily";
+}
+</script>
+
+</body>
+</html>
