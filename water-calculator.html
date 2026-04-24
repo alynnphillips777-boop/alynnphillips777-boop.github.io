@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head><title>Water Intake</title></head>
+<head>
+<title>Water Intake Calculator</title>
+<style>
+body{font-family:Arial;background:linear-gradient(to right,#4CAF50,#2E8B57);margin:0;text-align:center;color:white;}
+.header{padding:25px;font-size:28px;font-weight:bold;}
+.container{background:white;color:black;margin:30px auto;padding:30px;width:90%;max-width:500px;border-radius:15px;}
+input,button{padding:10px;margin:10px;width:80%;}
+button{background:#4CAF50;color:white;border:none;}
+.result{font-size:20px;font-weight:bold;}
+</style>
+</head>
 
-<body style="text-align:center; font-family:Arial;">
+<body>
 
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
 
-  
-  <h1>Water Intake Calculator</h1>
+<div class="container">
+<h2>Water Intake Calculator</h2>
 
 <input id="weight" placeholder="Weight (lbs)">
 
-<br><br>
 <button onclick="calcWater()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
+</div>
 
 <script>
 function calcWater(){
-let w = document.getElementById("weight").value;
-document.getElementById("result").innerText = "Drink " + (w*0.5) + " oz daily";
+let w=parseFloat(weight.value);
+
+if(!w){result.innerText="Enter weight";return;}
+
+result.innerText="Drink "+(w*0.5).toFixed(1)+" oz daily";
 }
 </script>
 
