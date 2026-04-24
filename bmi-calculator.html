@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>BMI Calculator</title>
-
-<style>
-
-  
-  body {font-family: Arial; background:#f4f6f8; text-align:center;}
-.container {padding:40px;}
-input, button {padding:10px; margin:10px;}
-button {background:#4CAF50; color:white; border:none;}
-</style>
+  <title>BMI Calculator</title>
+  <style>
+    body {font-family: Arial; background: linear-gradient(to right,#4CAF50,#2E8B57); margin:0; text-align:center; color:white;}
+    .header {padding:25px; font-size:28px; font-weight:bold;}
+    .container {background:white; color:black; margin:30px auto; padding:30px; width:90%; max-width:500px; border-radius:15px;}
+    input,button {padding:10px; margin:10px; width:80%;}
+    button {background:#4CAF50; color:white; border:none;}
+    .result {font-size:20px; font-weight:bold;}
+  </style>
 </head>
-
 <body>
 
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
+
 <div class="container">
-<h1>BMI Calculator</h1>
+<h2>BMI Calculator</h2>
+<p>Check your body mass index quickly.</p>
 
-<p>Enter your weight (lbs) and height (inches)</p>
-
-<input id="weight" placeholder="Weight">
-<input id="height" placeholder="Height">
-<br>
+<input id="weight" placeholder="Weight (lbs)">
+<input id="height" placeholder="Height (inches)">
 <button onclick="calcBMI()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
 </div>
 
 <script>
 function calcBMI(){
-let w = document.getElementById("weight").value;
-let h = document.getElementById("height").value;
+let w=parseFloat(document.getElementById("weight").value);
+let h=parseFloat(document.getElementById("height").value);
 
-let bmi = (w / (h*h)) * 703;
+if(!w||!h){document.getElementById("result").innerText="Enter valid values";return;}
 
-document.getElementById("result").innerText = "BMI: " + bmi.toFixed(1);
+let bmi=(w/(h*h))*703;
+document.getElementById("result").innerText="BMI: "+bmi.toFixed(1);
 }
 </script>
 
