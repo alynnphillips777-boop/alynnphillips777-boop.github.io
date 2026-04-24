@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head><title>Ovulation Calculator</title></head>
+<head>
+<title>Ovulation Calculator</title>
+<style>
+body{font-family:Arial;background:linear-gradient(to right,#4CAF50,#2E8B57);margin:0;text-align:center;color:white;}
+.header{padding:25px;font-size:28px;font-weight:bold;}
+.container{background:white;color:black;margin:30px auto;padding:30px;width:90%;max-width:500px;border-radius:15px;}
+input,button{padding:10px;margin:10px;width:80%;}
+button{background:#4CAF50;color:white;border:none;}
+.result{font-size:20px;font-weight:bold;}
+</style>
+</head>
+<body>
 
-<body style="text-align:center; font-family:Arial;">
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
 
-
-  
-  
-  
-  <h1>Ovulation Calculator</h1>
+<div class="container">
+<h2>Ovulation Calculator</h2>
 
 <input type="date" id="date">
 
-<br><br>
 <button onclick="calcOvu()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
+</div>
 
 <script>
 function calcOvu(){
-let d = new Date(document.getElementById("date").value);
-d.setDate(d.getDate() + 14);
+let d=new Date(date.value);
+if(!date.value){result.innerText="Pick a date";return;}
 
-document.getElementById("result").innerText =
-"Ovulation Date: " + d.toDateString();
+d.setDate(d.getDate()+14);
+result.innerText="Ovulation Date: "+d.toDateString();
 }
 </script>
 
