@@ -2,34 +2,43 @@
 <html>
 <head>
 <title>Calorie Calculator</title>
+<style>
+body{font-family:Arial;background:linear-gradient(to right,#4CAF50,#2E8B57);margin:0;text-align:center;color:white;}
+.header{padding:25px;font-size:28px;font-weight:bold;}
+.container{background:white;color:black;margin:30px auto;padding:30px;width:90%;max-width:500px;border-radius:15px;}
+input,button{padding:10px;margin:10px;width:80%;}
+button{background:#4CAF50;color:white;border:none;}
+.result{font-size:20px;font-weight:bold;}
+</style>
 </head>
+<body>
 
-<body style="text-align:center; font-family:Arial;">
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
 
-
-  
-  <h1>Calorie Calculator</h1>
+<div class="container">
+<h2>Calorie Calculator</h2>
+<p>Estimate your daily calorie needs.</p>
 
 <input id="weight" placeholder="Weight (lbs)">
 <input id="height" placeholder="Height (in)">
 <input id="age" placeholder="Age">
 
-<br><br>
 <button onclick="calcCalories()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
+</div>
 
 <script>
 function calcCalories(){
-let w = document.getElementById("weight").value;
-let h = document.getElementById("height").value;
-let a = document.getElementById("age").value;
+let w=parseFloat(weight.value);
+let h=parseFloat(height.value);
+let a=parseFloat(age.value);
 
-let calories = (10*w + 6.25*h - 5*a + 5);
+if(!w||!h||!a){result.innerText="Fill all fields";return;}
 
-document.getElementById("result").innerText = "Estimated Calories: " + calories;
+let c=(10*w+6.25*h-5*a+5);
+result.innerText="Estimated Calories: "+c;
 }
 </script>
 
