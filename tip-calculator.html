@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head><title>Tip Calculator</title></head>
+<head>
+<title>Tip Calculator</title>
+<style>
+body{font-family:Arial;background:linear-gradient(to right,#4CAF50,#2E8B57);margin:0;text-align:center;color:white;}
+.header{padding:25px;font-size:28px;font-weight:bold;}
+.container{background:white;color:black;margin:30px auto;padding:30px;width:90%;max-width:500px;border-radius:15px;}
+input,button{padding:10px;margin:10px;width:80%;}
+button{background:#4CAF50;color:white;border:none;}
+.result{font-size:20px;font-weight:bold;}
+</style>
+</head>
 
-<body style="text-align:center; font-family:Arial;">
+<body>
 
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
 
-  
-  <h1>Tip Calculator</h1>
+<div class="container">
+<h2>Tip Calculator</h2>
 
 <input id="bill" placeholder="Bill Amount">
 <input id="tip" placeholder="Tip %">
 
-<br><br>
 <button onclick="calcTip()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
+</div>
 
 <script>
 function calcTip(){
-let b = document.getElementById("bill").value;
-let t = document.getElementById("tip").value;
+let b=parseFloat(bill.value);
+let t=parseFloat(tip.value);
 
-let total = b * (1 + t/100);
+if(!b||!t){result.innerText="Enter values";return;}
 
-document.getElementById("result").innerText = "Total: $" + total;
+let total=b*(1+t/100);
+result.innerText="Total: $"+total.toFixed(2);
 }
 </script>
 
