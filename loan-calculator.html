@@ -2,67 +2,44 @@
 <html>
 <head>
 <title>Loan Calculator</title>
-
 <style>
-body {
-  font-family: Arial;
-  background: #f4f6f8;
-  text-align: center;
-}
-
-.container {
-  padding: 40px;
-}
-
-input, button {
-  padding: 10px;
-  margin: 10px;
-}
-
-button {
-  background: #4CAF50;
-  color: white;
-  border: none;
-}
+body{font-family:Arial;background:linear-gradient(to right,#4CAF50,#2E8B57);margin:0;text-align:center;color:white;}
+.header{padding:25px;font-size:28px;font-weight:bold;}
+.container{background:white;color:black;margin:30px auto;padding:30px;width:90%;max-width:500px;border-radius:15px;}
+input,button{padding:10px;margin:10px;width:80%;}
+button{background:#4CAF50;color:white;border:none;}
+.result{font-size:20px;font-weight:bold;}
 </style>
-
 </head>
 
+<body>
 
-  
-  <body>
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
 
 <div class="container">
-
-<h1>Loan Calculator</h1>
-
-<p>Enter loan details:</p>
+<h2>Loan Calculator</h2>
 
 <input id="amount" placeholder="Loan Amount">
-<input id="rate" placeholder="Interest Rate (%)">
+<input id="rate" placeholder="Interest %">
 <input id="years" placeholder="Years">
 
-<br>
 <button onclick="calcLoan()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
-
 </div>
 
 <script>
 function calcLoan(){
-alert("Button works");
+let a=parseFloat(amount.value);
+let r=parseFloat(rate.value)/100/12;
+let n=parseFloat(years.value)*12;
 
-let amount = document.getElementById("amount").value;
-let rate = document.getElementById("rate").value;
-let years = document.getElementById("years").value;
+if(!a||!r||!n){result.innerText="Fill all fields";return;}
 
-document.getElementById("result").innerText =
-"Values: " + amount + ", " + rate + ", " + years;
+let m=(a*r)/(1-Math.pow(1+r,-n));
+result.innerText="Monthly: $"+m.toFixed(2);
 }
-</script>
 </script>
 
 </body>
