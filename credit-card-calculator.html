@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head><title>Credit Card Calculator</title></head>
+<head>
+<title>Credit Card Calculator</title>
+<style>
+body{font-family:Arial;background:linear-gradient(to right,#4CAF50,#2E8B57);margin:0;text-align:center;color:white;}
+.header{padding:25px;font-size:28px;font-weight:bold;}
+.container{background:white;color:black;margin:30px auto;padding:30px;width:90%;max-width:500px;border-radius:15px;}
+input,button{padding:10px;margin:10px;width:80%;}
+button{background:#4CAF50;color:white;border:none;}
+.result{font-size:20px;font-weight:bold;}
+</style>
+</head>
+<body>
 
-<body style="text-align:center; font-family:Arial;">
+<div class="header">🕒 ➕ 🧮 My Calculator Hub</div>
 
-
-  
-  
-  
-  <h1>Credit Card Calculator</h1>
+<div class="container">
+<h2>Credit Card Calculator</h2>
+<p>Estimate monthly interest charges.</p>
 
 <input id="balance" placeholder="Balance">
 <input id="rate" placeholder="Interest %">
 
-<br><br>
 <button onclick="calcCC()">Calculate</button>
 
-<p id="result"></p>
-
+<p id="result" class="result"></p>
 <a href="index.html">⬅ Back</a>
+</div>
 
 <script>
 function calcCC(){
-let b = document.getElementById("balance").value;
-let r = document.getElementById("rate").value;
+let b=parseFloat(balance.value);
+let r=parseFloat(rate.value);
 
-let interest = b * (r/100);
+if(!b||!r){result.innerText="Enter values";return;}
 
-document.getElementById("result").innerText = "Monthly Interest: $" + interest;
+result.innerText="Monthly Interest: $"+(b*(r/100)).toFixed(2);
 }
 </script>
 
